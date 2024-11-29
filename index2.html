@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pitagoras</title>
+</head>
+<style>
+    h1{
+        text-align: center;
+    }
+    div{
+        position: absolute;
+        background-color: rgb(15, 15, 15);
+        text-align: left;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%,-45%);
+        border-radius: 15px;
+        padding: 15px;
+        color: aliceblue;
+    }
+    
+
+</style>
+<body>
+    <h1>pitágoras</h1>
+
+</body>
+<div>
+<form action="">
+  <br> <input type="number" id="c1" value>digite o valor do cateto oposto </input> </br> 
+  <br> <input type="number" id="c2" value>digite o valor do cateto adjacente </input> </br>
+  <br> <button type="button" onclick="somar()">calcular hipotenusa</button> </br>
+</form>
+<p id="resultado"></p>
+<form action="">
+   <br><input type="number" id="ca1" value> digite o valor do cateto oposto </input></br>
+   <br><input type="number" id="hip" value> digite o valor da hipotenusa </input></br>
+   <br><button type="button" onclick="somarCa()"> calcular o valor do cateto adjacente </button>
+</form>
+<p id="resultado2"></p>
+<form>
+    <br><input type="number" id="co1" value>digite o valor do cateto adjacente </input></br>
+    <br><input type="number" id="hip2" value>digite o valor da hipotenusa </input></br>
+    <br><button type="button" onclick="somarCo()"> calcular o valor do cateto oposto </button></br>
+</form>
+<p id="resultado3"></p>
+</div>
+
+<script>
+
+    function somar() {
+      c1= document.getElementById("c1").value
+      c2= document.getElementById ("c2").value
+      c1 = Number(c1)
+      c2 = Number(c2)
+      let vr = Number ( Math.pow(c1,2))
+      c4 = Number (Math.pow(c2,2))
+      c5= Number (vr + c4)
+      c6 = Number ( Math.sqrt (c5,2))
+      c7 = Number(c6)
+
+      document.getElementById("resultado").innerHTML = "o valor da hipotenusa é:" + c7
+    } 
+
+    function somarCa () {
+        ca1= document.getElementById("ca1").value
+        hip= document.getElementById("hip").value
+        ca1= Number(ca1)
+        hip= Number(hip)
+        hip= Number (Math.pow(hip,2))
+        ca3= Number(hip - Math.pow(ca1,2))
+        ca4= Number (Math.sqrt(ca3,2))
+
+        document.getElementById("resultado2").innerHTML = "o valor da cateto adjacente:"+ ca4
+    }
+    function somarCo (){
+        co1= document.getElementById("co1").value
+        hip2= document.getElementById("hip2").value
+        co1= Number(co1)
+        hip2= Number (hip2)
+        hip2= Number (Math.pow(hip2,2))
+        co2= Number(hip2 - Math.pow(co1,2))
+        co3= Number (Math.sqrt(co2,2))
+
+        document.getElementById("resultado3").innerHTML = "o valor da cateto oposto é: "+ co3
+    }
+</script>
+
+</html
